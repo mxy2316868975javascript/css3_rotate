@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>纯css3旋转效果</title>
+    <style>
+        .viewport-flip .frontface {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .viewport-flip .flip {
+            -webkit-perspective: 500;
+            -moz-perspective: 500;
+            -ms-perspective: 500;
+            -o-perspective: 500;
+            perspective: 500;
+        }
+        .viewport-flip .list {
+            -webkit-transition: -webkit-transform .4s;
+            -moz-transition: -moz-transform .4s;
+            -ms-transition: -ms-transform .4s;
+            -o-transition: -o-transform .4s;
+            transition: transform .4s;
+        }
+        .viewport-flip .backface {
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            transform: rotateY(-180deg)
+        }
+        .viewport-flip .flip:hover .frontface {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+        .viewport-flip .flip:hover .backface {
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            -o-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+        }
+
+        .square-content{
+            width:1000px;
+            margin:200px auto;
+            position: relative;
+        }
+        li{
+            list-style: none;
+            float:left;
+            width:25%;
+            height:178px;
+            font-family:"宋体";
+            cursor:pointer;
+            position:relative;
+        }
+        .square{
+            width:176px;
+            height:176px;
+            border:1px solid #f14700;
+            transform:rotate(315deg);
+            -ms-transform:rotate(315deg); /* Internet Explorer */
+            -moz-transform:rotate(315deg); /* Firefox */
+            -webkit-transform:rotate(315deg); /* Safari 和 Chrome */
+            -o-transform:rotate(315deg); /* Opera */
+        }
+        .frontface{
+            color:#fff;
+            line-height:176px;
+            text-align:center;
+            font-size:42px;
+        }
+        .frontface .square{
+            background:#f14700;
+        }
+        .backface{
+            color:#f14700;
+        }
+        .backface .square{
+            background:#fff;
+        }
+        .backface .content{
+            padding-left:100px;
+            padding-top:50px;
+        }
+        .list{
+            position:absolute;
+        }
+        .content{
+            transform:rotate(45deg);
+            -ms-transform:rotate(45deg); /* Internet Explorer */
+            -moz-transform:rotate(45deg); /* Firefox */
+            -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+            -o-transform:rotate(45deg); /* Opera */
+        }
+    </style>
+</head>
+<body>
+    <ul class="square-content clearfix">
+    <li class="viewport-flip">
+        <div class="flip">
+            <div class="backface list">
+                <div class="square">
+                    <div class="content">
+                        我是反面
+                    </div>
+                </div>
+            </div>
+            <div class="frontface list">
+                <div class="square">
+                    <div class="content">
+                        正面
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="viewport-flip">
+        <div class="flip">
+            <div class="backface list">
+                <div class="square">
+                    <div class="content">
+                    我是反面
+                    </div>
+                </div>
+            </div>
+            <div class="frontface list">
+                <div class="square">
+                    <div class="content">
+                        正面
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="viewport-flip">
+        <div class="flip">
+            <div class="backface list">
+                <div class="square">
+                    <div class="content">
+                        我是反面
+                    </div>
+                </div>
+            </div>
+            <div class="frontface list">
+                <div class="square">
+                    <div class="content">
+                        正面
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="viewport-flip">
+        <div class="flip">
+            <div class="backface list">
+                <div class="square">
+                    <div class="content">
+                        我是反面
+                    </div>
+                </div>
+            </div>
+            <div class="frontface list">
+                <div class="square">
+                    <div class="content">
+                        正面
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+</body>
+</html>
